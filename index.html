@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon Page - Aryan Koul</title>
+    <link rel="stylesheet" href="/project4/style.css" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Your CSS styles here */
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:sans-serif;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 220vh;
+           height:100vh;
+           background-image: url(https://wallpapers.com/images/hd/dark-gray-background-hy2ztpcjg534mic7.jpg);                
+           background-position: cover;
+          
+        }
+        .logo{
+            width:120px;
+            height: auto;
+            padding: 10px  0px;
+           margin-left: 2vh;
+            cursor: pointer;
+        }
+        .content{
+           margin-top: -250px;
+            transform: translateY(150%);
+            margin-left: 11vh;
+            color:white;
+        }
+        .content h1{
+            padding-bottom: 10px;
+            font-size: 50px;
+            font-weight: 600;
+           
+        }
+        .container h1 span{
+            color: #ff3753;
+        }
+        .container .btn{
+            background: transparent;
+            color: #ff3753;
+            border: 3px solid #fff;
+            outline: none;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius:50px;
+        }
+        .btn{
+            width:150px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .btn:hover{
+            color: #fff;
+            background-color: #ff3753;
+            text-decoration: underline
+        }
+        p{
+            margin-bottom: 2px;
+            font-weight: 900;
+        }
+        .launch-time{
+            display: flex;
+        }
+        .launch-time div{
+            flex-basis: 100px;
+            margin-bottom: 50px;
+        }
+        .launch-time div p{
+            font-size: 40px;
+            margin-bottom: 11px;
+            margin-left: -7px;
+        }
+        .rocket{
+            width:250px;
+            position: absolute;
+            right:10%;
+            bottom: 0;
+            animation: rocket 11s linear infinite;
+        }
+        @keyframes rocket{
+            0%{
+                bottom:0;
+                opacity:0.6;
+            }
+           100%{
+                bottom:150%;
+                opacity:1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://aaryan.org.in/wp-content/uploads/2023/05/lOGO_thumbnail.png" alt="" class="logo">
+        <div class="content">
+            <p>Website Is Under Maintenance</p>
+            <h1>We're <span>Launching</span> soon..</h1>
+            <div class="launch-time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+                <div>
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        <img src="rocket.png" class="rocket">
+    </div>
+
+    <script>
+        var countDownDate = new Date("August 31, 2023 18:00:00").getTime();
+
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+

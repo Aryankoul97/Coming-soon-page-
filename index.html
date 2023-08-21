@@ -8,42 +8,43 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
         /* Your CSS styles here */
-        *{
+        * {
             margin: 0;
             padding: 0;
-            font-family:sans-serif;
+            font-family: sans-serif;
             box-sizing: border-box;
         }
-        .container{
-            width: 220vh;
-           height:100vh;
-           background-image: url(https://wallpapers.com/images/hd/dark-gray-background-hy2ztpcjg534mic7.jpg);                
-           background-position: cover;
-          
+        .container {
+            min-height: 100vh;
+            background-image: url(https://wallpapers.com/images/hd/dark-gray-background-hy2ztpcjg534mic7.jpg);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
         }
-        .logo{
-            width:120px;
+        .logo {
+            width: 120px;
             height: auto;
-            padding: 10px  0px;
-           margin-left: 2vh;
             cursor: pointer;
         }
-        .content{
-           margin-top: -250px;
-            transform: translateY(150%);
-            margin-left: 11vh;
-            color:white;
+        .content {
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
         }
-        .content h1{
-            padding-bottom: 10px;
-            font-size: 50px;
+        .content h1 {
+            font-size: 2rem;
             font-weight: 600;
-           
+            margin-bottom: 10px;
         }
-        .container h1 span{
+        .container h1 span {
             color: #ff3753;
         }
-        .container .btn{
+        .container .btn {
             background: transparent;
             color: #ff3753;
             border: 3px solid #fff;
@@ -52,50 +53,71 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius:50px;
-        }
-        .btn{
-            width:150px;
-        }
-        a{
+            border-radius: 50px;
+            margin-top: 20px;
             text-decoration: none;
         }
-        .btn:hover{
+        .btn:hover {
             color: #fff;
             background-color: #ff3753;
             text-decoration: underline
         }
-        p{
+        p {
             margin-bottom: 2px;
             font-weight: 900;
+            font-size: 1rem;
         }
-        .launch-time{
+        .launch-time {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
         }
-        .launch-time div{
+        .launch-time div {
             flex-basis: 100px;
-            margin-bottom: 50px;
+            margin: 0 10px;
         }
-        .launch-time div p{
-            font-size: 40px;
-            margin-bottom: 11px;
-            margin-left: -7px;
+        .launch-time div p {
+            font-size: 1.5rem;
+            margin: 0;
         }
-        .rocket{
-            width:250px;
-            position: absolute;
-            right:10%;
-            bottom: 0;
+        .rocket {
+            width: 150px;
             animation: rocket 11s linear infinite;
+            margin-top: 20px;
         }
-        @keyframes rocket{
-            0%{
-                bottom:0;
-                opacity:0.6;
+        @keyframes rocket {
+            0% {
+                transform: translateY(0);
+                opacity: 0.6;
             }
-           100%{
-                bottom:150%;
-                opacity:1;
+            100% {
+                transform: translateY(-100%);
+                opacity: 1;
+            }
+        }
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .content {
+                margin-top: 0;
+            }
+            .logo {
+                width: 80px;
+            }
+            .content h1 {
+                font-size: 1.5rem;
+            }
+            .container .btn {
+                font-size: 0.8rem;
+            }
+            p {
+                font-size: 0.8rem;
+            }
+            .launch-time div p {
+                font-size: 1rem;
+            }
+            .rocket {
+                width: 100px;
             }
         }
     </style>
@@ -130,9 +152,11 @@
     </div>
 
     <script>
+        // JavaScript code here
+        
         var countDownDate = new Date("August 31, 2023 18:00:00").getTime();
 
-
+        
         var x = setInterval(function() {
             var now = new Date().getTime();
             var distance = countDownDate - now;
